@@ -44,7 +44,13 @@ app.post('/api/notes', (req, res) => {
         } else {
             // parse data from db.json
             const notes = JSON.parse(data);
-            
+            // create new note with unique id
+            const newNote = {
+                title: req.body.title,
+                text: req.body.text,
+                id: uuidv4(),
+            };
+
 
 
 
