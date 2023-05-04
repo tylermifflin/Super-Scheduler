@@ -81,6 +81,11 @@ app.delete('/api/notes/:id', (req, res) => {
         }
     });
 });
+// listen for PORT
+app.listen(PORT, () =>
+    console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
+
 
 
 
