@@ -8,8 +8,10 @@ const { v4: uuidv4 } = require('uuid');
 const PORT = process.env.port || 3001;
 // calling express in app
 const app = express();
-// using express to parse incoming string or array data
+// using express to parse incoming string or array data, and JSON data
 app.use(express.urlencoded({ extended: true }));
-// using express to parse incoming JSON data
 app.use(express.json());
+// use express.static to serve up the public folder as a static directory
+app.use(express.static('public'));
+
 
