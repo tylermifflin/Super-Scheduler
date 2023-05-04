@@ -52,6 +52,15 @@ app.post('/api/notes', (req, res) => {
             };
             // push new note to notes array
             notes.push(newNote);
+            // write new note to db.json on a separate line
+            fs.writeFile('./db/db.json', JSON.stringify(notes, null, 4), (err) =>
+                err ? console.error(err) : console.log('Note added!')
+            );
+            
+           
+
+
+
         
 
 
