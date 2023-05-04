@@ -4,9 +4,13 @@
         "text": ""
     },
     {
-        "title": "Go to Trader Joe's",
-        "text": "Restock on Yerba Mate Loose Leaf",
-        "id": "135d4508-fedb-4d90-97f8-05971b688b28"
+        "title": "Trader Joe's",
+        "text": "Stock up on Yerba Mate",
+        "id": "aacab481-a896-4f3a-924c-a957cab86025"
     },
-  
+    {
+        "title": "",
+        "text": "",
+        "id": "db85a21f-09be-4cc2-9421-799e458112f7"
+    }
 ]

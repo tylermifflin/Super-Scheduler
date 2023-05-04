@@ -25,6 +25,7 @@ app.get('*', (req, res) =>
     );
 // get route for api/notes
 app.get('/api/notes', (req, res) => {
+    res.json(db);
     // read notes from db.json
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) {
@@ -64,25 +65,25 @@ app.post('/api/notes', (req, res) => {
     });
 }); 
 // delete route for api/notes
-app.delete('/api/notes/:id', (req, res) => {
+//app.delete('/api/notes/:id', (req, res) => {
     // read notes from db.json
-    fs.readFile('./db/db.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-        } else {
+    //fs.readFile('./db/db.json', 'utf8', (err, data) => {
+       // if (err) {
+       //     console.error(err);
+      //  } else {
             // parse data from db.json
-            const notes = JSON.parse(data);
+      //      const notes = JSON.parse(data);
             // filter notes array by id to delete any note
-            const newNotes = notes.filter((note) => note.id !== req.params.id);
+      //      const newNotes = notes.filter((note) => note.id !== req.params.id);
             // write new notes to db.json on a separate line
-            fs.writeFile('./db/db.json', JSON.stringify(newNotes, null, 4), (err) =>
-                err ? console.error(err) : console.log('Note deleted!')
-            );
+       //     fs.writeFile('./db/db.json', JSON.stringify(newNotes, null, 4), (err) =>
+        //        err ? console.error(err) : console.log('Note deleted!')
+       //     );
             // return notes as json
-            res.json(newNotes);
-        }
-    });
-});
+      //      res.json(newNotes);
+    //    }
+ //   });
+// });
 // listen for PORT
 app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT} 🚀`)
