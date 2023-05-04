@@ -50,6 +50,9 @@ app.post('/api/notes', (req, res) => {
                 text: req.body.text,
                 id: uuidv4(),
             };
+            // push new note to notes array
+            notes.push(newNote);
+        
 
 
 
