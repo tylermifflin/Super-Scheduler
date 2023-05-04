@@ -15,12 +15,26 @@ app.use(express.json());
 app.use(express.static('public'));
 // get route for notes.html
 app.get('/notes', (req, res) => 
-    res.sendFile(path.join(__dirname, './public/notes.html'));
+    res.sendFile(path.join(__dirname, './public/notes.html'))
     );
 // get route for index.html
 app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, './public/index.html'))
     );
 // get route for api/notes
+app.get('/api/notes', (req, res) => {
+    // read notes from db.json
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            // parse data from db.json
+            const notes = JSON.parse(data);
+            // return notes as json
+            res.json(notes);
+        }
+    });
+});
+
 
 
