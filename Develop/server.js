@@ -35,6 +35,13 @@ app.get('/api/notes', (req, res) => {
         }
     });
 });
+// post route for api/notes
+app.post('/api/notes', (req, res) => {
+    // read notes from db.json
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+        }
 
 
 
