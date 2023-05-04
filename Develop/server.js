@@ -25,7 +25,7 @@ app.get('*', (req, res) =>
     );
 // get route for api/notes
 app.get('/api/notes', (req, res) => {
-    res.json(db);
+    res.sendFile(path.join(__dirname, './db/db.json'));
     // read notes from db.json
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) {
