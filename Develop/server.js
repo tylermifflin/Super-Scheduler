@@ -13,5 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // use express.static to serve up the public folder as a static directory
 app.use(express.static('public'));
-
+// get route for notes.html
+app.get('/notes', (req, res) => 
+    res.sendFile(path.join(__dirname, './public/notes.html'));
+    );
+    
 
