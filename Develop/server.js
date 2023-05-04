@@ -60,7 +60,16 @@ app.post('/api/notes', (req, res) => {
             res.json(notes);
         }
     });
-});
+}); 
+// delete route for api/notes
+app.delete('/api/notes/:id', (req, res) => {
+    // read notes from db.json
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            // parse data from db.json
+            const notes = JSON.parse(data);
 
            
 
