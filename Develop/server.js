@@ -2,9 +2,8 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-//const savenotes = require('./public/assets/js/index.js');
 // calling my db.json file to use to save notes
-//const db = require('./db/db.json');
+const notesdata = require('./db/db.json');
 // calling uuid to generate unique id for each note
 const { v4: uuidv4 } = require('uuid');
 // using process.env.port to allow heroku to set port
@@ -25,9 +24,9 @@ app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, './public/index.html'))
     );
 // get route for api/notes
-//app.get('/api/notes', (req, res) => 
- //   res('./db/db.json')
- //   );
+app.get('/api/notes', (req, res) => 
+   res.json(notesdata)
+   );
 // post route for api/notes
 app.post('/api/notes', (req, res) => {
     // read notes from db.json
