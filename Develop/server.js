@@ -2,6 +2,8 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+// calling my db.json file to use to save notes
+const db = require('./db/db.json');
 // calling uuid to generate unique id for each note
 const { v4: uuidv4 } = require('uuid');
 // using process.env.port to allow heroku to set port
@@ -85,6 +87,7 @@ app.delete('/api/notes/:id', (req, res) => {
 app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
+
 
 
 
