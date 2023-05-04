@@ -56,7 +56,12 @@ app.post('/api/notes', (req, res) => {
             fs.writeFile('./db/db.json', JSON.stringify(notes, null, 4), (err) =>
                 err ? console.error(err) : console.log('Note added!')
             );
-            
+            // return notes as json
+            res.json(notes);
+        }
+    });
+});
+
            
 
 
