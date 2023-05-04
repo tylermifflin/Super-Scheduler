@@ -70,6 +70,12 @@ app.delete('/api/notes/:id', (req, res) => {
         } else {
             // parse data from db.json
             const notes = JSON.parse(data);
+            // filter notes array by id to delete any note
+            const newNotes = notes.filter((note) => note.id !== req.params.id);
+            
+
+
+
 
            
 
