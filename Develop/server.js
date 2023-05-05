@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 // calling my db.json file to use to save notes
-const notesdata = require('./db/db.json');
+let notesdata = require('./db/db.json');
 // calling uuid to generate unique id for each note
 const { v4: uuidv4 } = require('uuid');
 // using process.env.port to allow heroku to set port
@@ -19,14 +19,10 @@ app.use(express.static('public'));
 app.get('/notes', (req, res) => 
     res.sendFile(path.join(__dirname, './public/notes.html'))
     );
-// get route for index.html
-app.get('*', (req, res) =>
-    res.sendFile(path.join(__dirname, './public/index.html'))
-    );
+
 // get route for api/notes
-app.get('/api/notes', (req, res) => 
-   res.json(notesdata)
-   );
+app.get('/api/notes', (req, res) => res.json(notesdata));
+   
 // post route for api/notes
 app.post('/api/notes', (req, res) => {
     // read notes from db.json
@@ -44,15 +40,21 @@ app.post('/api/notes', (req, res) => {
             };
             // push new note to notes array
             notes.push(newNote);
+            notesdata = notes
             // write new note to db.json on a separate line
             fs.writeFile('./db/db.json', JSON.stringify(notes, null, 4), (err) =>
                 err ? console.error(err) : console.log('Note added!')
             );
             // return notes as json
             res.json(notes);
+
         }
     });
 }); 
+// get route for index.html
+app.get('*', (req, res) =>
+    res.sendFile(path.join(__dirname, './public/index.html'))
+    );
 // delete route for api/notes
 //app.delete('/api/notes/:id', (req, res) => {
     // read notes from db.json
