@@ -51,30 +51,32 @@ app.post('/api/notes', (req, res) => {
         }
     });
 }); 
+// delete route for api/notes
+app.delete('/api/notes/:id', (req, res) => {
+    // read notes from db.json
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            // parse data from db.json
+            const notes = JSON.parse(data);
+            // filter notes array to exclude note with matching id
+            const newNotes = notes.filter((note) => note.id !== req.params.id);
+            notesdata = newNotes
+            // write new note to db.json on a separate line
+            fs.writeFile('./db/db.json', JSON.stringify(newNotes, null, 4), (err) =>
+                err ? console.error(err) : console.log('Note deleted!')
+            );
+            // return notes as json
+            res.json(newNotes);
+        }
+    });
+});
 // get route for index.html
 app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, './public/index.html'))
     );
-// delete route for api/notes
-//app.delete('/api/notes/:id', (req, res) => {
-    // read notes from db.json
-    //fs.readFile('./db/db.json', 'utf8', (err, data) => {
-       // if (err) {
-       //     console.error(err);
-      //  } else {
-            // parse data from db.json
-      //      const notes = JSON.parse(data);
-            // filter notes array by id to delete any note
-      //      const newNotes = notes.filter((note) => note.id !== req.params.id);
-            // write new notes to db.json on a separate line
-       //     fs.writeFile('./db/db.json', JSON.stringify(newNotes, null, 4), (err) =>
-        //        err ? console.error(err) : console.log('Note deleted!')
-       //     );
-            // return notes as json
-      //      res.json(newNotes);
-    //    }
- //   });
-// });
+
 // listen for PORT
 app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT} 🚀`)

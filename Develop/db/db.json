@@ -4,29 +4,9 @@
         "text": "Test text"
     },
     {
-        "title": "Trader Joe's",
-        "text": "Stock up on Yerba mate",
-        "id": "6a491b37-7dda-4a74-a323-fecc1d01c4d6"
-    },
-    {
         "title": "Change Tires",
         "text": "Remove Snow Tires",
         "id": "b7883724-8eae-4dbb-aabc-d0347c6d5550"
-    },
-    {
-        "title": "Finish Project 11",
-        "text": "Figure out how to append to body",
-        "id": "a1b9d585-70df-40a2-8e7b-09a31aa2c836"
-    },
-    {
-        "title": "test",
-        "text": "test",
-        "id": "2bb4975c-bb9c-4577-88e2-355f573823d5"
-    },
-    {
-        "title": "Test",
-        "text": "test",
-        "id": "5de6e0b5-3c86-43cb-bf3e-cfb560fdc622"
     },
     {
         "title": "grocery",
@@ -42,5 +22,10 @@
         "title": "car",
         "text": "change tires\n",
         "id": "1366ddea-67e7-4863-93b7-370b39a4945a"
+    },
+    {
+        "title": "Sprouts",
+        "text": "Stock up on Yerba mate",
+        "id": "a0dc0851-9bee-4233-9a03-e84a50db2d31"
     }
 ]
