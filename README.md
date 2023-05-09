@@ -9,7 +9,7 @@
 * [Tests](#tests)
 * [Questions](#questions)
 ## Description
-The purpose of this app is to help the user plan out their day efficiently so that they will have more success and happiness in their lives. This app combines front end developing with back end developing. I learned a lot about creating and using routes, using express to connect the back end to the front end, FS, and using the uuid dependency to create unique ids for each note instead of creating a function and using Math.random. Here is a link to my deployed application and a screenshot showing a mock up of the app: 
+The purpose of this app is to help the user plan out their day efficiently so that they will have more success and happiness in their lives. This app combines front end developing with back end developing. I learned a lot about creating and using routes, using express to connect the back end to the front end, FS, deploying an app to Heroku, and using the uuid dependency to create unique ids for each note instead of creating a function and using Math.random. Here is a link to my deployed application and a screenshot showing a mock up of the app: 
 https://superscheduler.herokuapp.com/
 ![Screenshot 2023-05-08 at 3 10 52 PM](https://user-images.githubusercontent.com/123903709/236939941-5fa2bd6c-3113-432c-b75f-2b215b34d86d.png)
 ## Installation
