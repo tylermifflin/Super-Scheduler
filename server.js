@@ -7,7 +7,7 @@ let notesdata = require('./db/db.json');
 // calling uuid to generate unique id for each note
 const { v4: uuidv4 } = require('uuid');
 // using process.env.port to allow heroku to set port
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT || 3001;
 // calling express in app
 const app = express();
 // using express to parse incoming string or array data, and JSON data
